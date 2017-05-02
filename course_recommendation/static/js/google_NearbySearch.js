@@ -1,8 +1,8 @@
 // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
-      // locate you.
-      var map, infoWindow, source, dest;
+  // locate you.
+    var map, infoWindow, source, dest,directionsDisplay;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 36.778259, lng:  -119.417931},
@@ -74,8 +74,8 @@
     //    console.log("createMarker details:",place);
         var placeLoc = place.geometry.location;
         var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer;
-        directionsDisplay.setMap(map);
+        directionsDisplay = new google.maps.DirectionsRenderer;
+        directionsDisplay.setMap(null);
         if (place.types.indexOf('library') != -1) {
           var marker = new google.maps.Marker({
             map: map,
@@ -84,15 +84,7 @@
             icon: 'library.png',
             position: place.geometry.location
           });
-        } else if (place.types.indexOf('point-of-interest') != -1) {
-          var marker = new google.maps.Marker({
-            map: map,
-            animation: google.maps.Animation.DROP,
-            title: place.name,
-            icon: 'place.png',
-            position: place.geometry.location
-          });
-        } else if (place.types.indexOf('restaurant') != -1) {
+        }  else if (place.types.indexOf('restaurant') != -1) {
           var marker = new google.maps.Marker({
             map: map,
             animation: google.maps.Animation.DROP,
@@ -129,17 +121,17 @@
         });
       }
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-        directionsDisplay.setMap(map);
-        console.log("calculateAndDisplayRoute being called - source:",source, "destination:", dest);
+        // console.log("calculateAndDisplayRoute being called - source:",source, "destination:", dest);
         directionsService.route({
           origin: source,
           destination: dest,
           travelMode: 'WALKING'
         }, function(response, status) {
           if (status === 'OK') {
-            console.log("status is OK:", status);
-            console.log(response);
-            directionsDisplay.setDirections(response);
+            // console.log("status is OK:", status);
+            // console.log(response);
+              directionsDisplay.setMap(map);
+              directionsDisplay.setDirections(response);
           } else {
             window.alert('Directions request failed due to ' + status);
           }
