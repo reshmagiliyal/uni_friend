@@ -24,21 +24,11 @@ logging.config.dictConfig(LOGGING)
 
 
 def index(request):
-    # all_j=jobs.objects.all()
-    # return render(request,'courses/jobs.html',{'all_jobs': all_j})
     return render(request, 'uni_friend-frontend/index.html')
 
 def job(request):
     all_j = jobs.objects.all()
     return render(request, 'uni_friend-frontend/courserec.html',{'all_jobs': all_j})
-
-def test(request,job_id):
-    # id=request.GET.get('id',None)
-    data={
-
-        'id':1
-    }
-    return JsonResponse(data)
 
 def recommend(request,job_id,prog=None):
     rec_courses = []
@@ -61,17 +51,17 @@ def recommend(request,job_id,prog=None):
 
     if prog is None:
         for l in range(len(dict)):
-            # if (dict.values()[l]) >= 2:
-            recommend_courses.append(courses.objects.filter(number=dict.keys()[l]))
+            if (dict.values()[l]) >= 2:
+                 recommend_courses.append(courses.objects.filter(number=dict.keys()[l]))
     else:
         for l in range(len(dict)):
-        # if (dict.values()[l]) >= 2:
-            recommend_courses.append(courses.objects.filter(number=dict.keys()[l],program=prog ))
-
+            if (dict.values()[l]) >= 2:
+                recommend_courses.append(courses.objects.filter(number=dict.keys()[l],program=prog ))
 
 
     # return JsonResponse(data)
 
-    return render(request, 'uni_friend-frontend/modelPopUp.html',{'jobs': jobfull, 'filter_courses': recommend_courses})
+    return  render(request, 'uni_friend-frontend/modelPopUp.html',{'jobs': jobfull ,'filter_courses': recommend_courses })
+
 
 

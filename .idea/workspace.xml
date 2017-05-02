@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79a663c1-d5ac-4233-b8aa-2c5445fde6ec" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/course_recommendation/templates/courses/course.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/course_recommendation/templates/courses/jobs.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/jobpopup.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/course_recommendation/admin.py" afterPath="$PROJECT_DIR$/course_recommendation/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/course_recommendation/models.py" afterPath="$PROJECT_DIR$/course_recommendation/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/courserec.html" afterPath="$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/courserec.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/index.html" afterPath="$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/modelPopUp.html" afterPath="$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/modelPopUp.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/course_recommendation/urls.py" afterPath="$PROJECT_DIR$/course_recommendation/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/course_recommendation/views.py" afterPath="$PROJECT_DIR$/course_recommendation/views.py" />
     </list>
@@ -52,8 +46,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/course_recommendation/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="74" column="63" lean-forward="false" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
+            <state relative-caret-position="318">
+              <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -61,11 +55,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="modelPopUp.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/modelPopUp.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="116" column="7" lean-forward="false" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#2086#2092#1#HTML" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#2587#2593#1#HTML" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#3260#3266#1#HTML" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/course_recommendation/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+            <state relative-caret-position="273">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -74,8 +88,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/course_recommendation/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="357">
+              <caret line="31" column="38" lean-forward="true" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -84,8 +98,8 @@
       <file leaf-file-name="courserec.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/courserec.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="256" column="30" lean-forward="true" selection-start-line="256" selection-start-column="30" selection-end-line="256" selection-end-column="30" />
+            <state relative-caret-position="483">
+              <caret line="275" column="7" lean-forward="false" selection-start-line="275" selection-start-column="7" selection-end-line="275" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -95,7 +109,7 @@
         <entry file="file://$PROJECT_DIR$/course_recommendation/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -107,7 +121,7 @@
         <entry file="file://$PROJECT_DIR$/my_site/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-651">
-              <caret line="36" column="30" lean-forward="true" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+              <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -169,11 +183,12 @@
         <option value="$PROJECT_DIR$/my_site/settings.py" />
         <option value="$PROJECT_DIR$/course_recommendation/admin.py" />
         <option value="$PROJECT_DIR$/course_recommendation/models.py" />
-        <option value="$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/courserec.html" />
         <option value="$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/index.html" />
         <option value="$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/jobpopup.html" />
-        <option value="$PROJECT_DIR$/course_recommendation/views.py" />
         <option value="$PROJECT_DIR$/course_recommendation/urls.py" />
+        <option value="$PROJECT_DIR$/course_recommendation/views.py" />
+        <option value="$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/courserec.html" />
+        <option value="$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/modelPopUp.html" />
       </list>
     </option>
   </component>
@@ -723,13 +738,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/my_site/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FirstProject/urls.py" />
     <entry file="file://$PROJECT_DIR$/FirstProject/views.py" />
     <entry file="file://$PROJECT_DIR$/FirstProject/templates/courses/try.html" />
@@ -896,7 +904,7 @@
     <entry file="file://$PROJECT_DIR$/my_site/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-651">
-          <caret line="36" column="30" lean-forward="true" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+          <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -913,22 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/courserec.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="256" column="30" lean-forward="true" selection-start-line="256" selection-start-column="30" selection-end-line="256" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course_recommendation/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/jobpopup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
@@ -940,28 +932,62 @@
     <entry file="file://$PROJECT_DIR$/course_recommendation/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/course_recommendation/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course_recommendation/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="31" column="38" lean-forward="true" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/courserec.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="275" column="7" lean-forward="false" selection-start-line="275" selection-start-column="7" selection-end-line="275" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/course_recommendation/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="74" column="63" lean-forward="false" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
+        <state relative-caret-position="318">
+          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/course_recommendation/urls.py">
+    <entry file="file://$PROJECT_DIR$/course_recommendation/templates/uni_friend-frontend/modelPopUp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-          <folding />
+        <state relative-caret-position="483">
+          <caret line="116" column="7" lean-forward="false" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2086#2092#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2587#2593#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#3260#3266#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
