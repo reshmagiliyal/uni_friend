@@ -64,4 +64,5 @@ def recommend(request,job_id,prog=None):
     return  render(request, 'uni_friend-frontend/modelPopUp.html',{'jobs': jobfull ,'filter_courses': recommend_courses })
 
 
-
+def services(request):
+    return render(request,'uni_friend-frontend/sjsunav.html')
