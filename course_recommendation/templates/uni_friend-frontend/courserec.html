@@ -152,91 +152,13 @@
     </div>
     <a id="to-top" href="#top" class=" page-scroll btn btn-dark btn-lg "><i class="fa fa-chevron-up fa-fw fa-1x"></i></a> </footer>
 
-<div class="modal fade" href=""  id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <ul class="nav nav-tabs nav-justified">
-                <li class="active"><a href="#tab1" data-toggle="tab" style="line-height: 35px;">Job Info</a></li>
-                <li><a href="#tab2" data-toggle="tab" style="line-height: 35px;">Recommended Courses</a></li>
-            </ul>
-            <div class="tab-content">
-                <div id="tab1" class="tab-pane fade in active">
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-1" style="align:center; "> <i class="glyphicon glyphicon-briefcase"></i> </div>
-                            <div class="col-md-11">
-                                <label> Job Title: </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-1">&nbsp;</div>
-                            <div class="col-md-11"> <span id="jobTitle"></span> </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-1" style="align:center; "> <i class="glyphicon glyphicon-paperclip"></i> </div>
-                            <div class="col-md-11">
-                                <label> Job Description: </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-1">&nbsp;</div>
-                            <div class="col-md-11"> <span id="jobDesp"> </span> </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="tab2" class="tab-pane fade">
-                    <div class="modal-body" id="coursesDivTab">
-                        <div class="row">
-                            <div class="col-md-1" style="align:center; "> <i class="glyphicon glyphicon-book"></i> </div>
-                            <div class="col-md-11">
-                                <label> Courses List: </label>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-1">&nbsp;</div>
-                            <div class="col-md-11">
-                                <div id="courseDisplay">
-                                    <div class="checkbox">
-                                        <label id="courseNumber_{{ course.0.id }}">
-                                            <input type="checkbox" placeholder="Already enrolled" value="">
-                                        </label>
-                                        <div class="col-md-11"> <span id="courseName">
-                                            <li >Course Name: <p id="cName_{{ course.0.id }}"></p> </li>
-                                            <li>Course description: <p id="cDesp_{{ course.0.id }}"></p> </li>
-                                            <li>Department: <p id="cDept_{{ course.0.id }}"></p> </li>
-                                            <li>Program: <p id="cPrg_{{ course.0.id }}"> </p></li>
-                                            <li>Url: <p id="cUrl_{{ course.0.id }}"> </p></li>
-                                        </span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <aside> <span class="alert-info">Please check the checkbox if you have already enrolled to the course.</span> </aside>
-                    <form role="form" id="emailForm" style="display:none" >
-                        <div class="form-group">
-                            <br>
-                            <h4>Plese input your Email-ID for further recommendations!</h4>
-                            <div class=" row left-inner-addon">
-                                <div class="col-md-1">
-                                    <i class="glyphicon glyphicon-envelope"></i></div>
-                                <div class="col-md-11">
-                                    <input type="text" class="form-control" id="email" placeholder="Email">
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-success btn-block"> Submit</button>
-                    </form>
-                </div>
+    <div class="modal fade" id="newPagePopUp" tabindex="-1" role="dialog" aria-labelledby="newPagePopUpLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="popBody">
             </div>
         </div>
     </div>
-</div>
-</div>
+
 
 
 <!-- jQuery -->
@@ -291,13 +213,10 @@
                     "method" : function(event) {
                         // deselect the area by assigning all of the dataProvider as selected object
                         map.selectedObject = map.dataProvider;
-
                         // toggle showAsSelected
                         event.mapObject.showAsSelected = !event.mapObject.showAsSelected;
-
                         // bring it to an appropriate color
                         map.returnInitialColor(event.mapObject);
-
                         // let's build a list of currently selected states
                         var states = [];
                         for ( var i in map.dataProvider.areas) {
@@ -315,7 +234,6 @@
                             $("#selStates").html("Jobs in "+ states.toString());
                         }
                     }
-
                 } ],
                 "export" : {
                     "enabled" : true
@@ -326,102 +244,33 @@
 
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
-
     var map;
     function initialize() {
         var mapDiv = document.getElementById('map');
         map = new google.maps.Map(mapDiv, {
             center: new google.maps.LatLng(37.09024, -95.712891),
             zoom: 4,
-
         });
-
         google.maps.event.addListenerOnce(map, 'tilesloaded', addMarkers);
-
     }
     function addMarkers() {
-
         {% for job in all_jobs %}
             var point = new google.maps.LatLng({{job.latitude}},{{job.longitude}});
-
             var marker = new google.maps.Marker({
                 position: point,
                 map: map,
-                title: '{{ job.Jobtitle}}',
-                {#            url: '/home/job/{{ job.id }}/ '#}
-
+                title: '{{ job.Jobtitle}}'
             });
-            marker['infowindow']  = new google.maps.InfoWindow({
-                content: "<h1>{{job.Jobtitle}}</h1> <br> {{ job.description }}",
-            });
+{#            marker['infowindow']  = new google.maps.InfoWindow({#}
+{#                content: "<h1>{{job.Jobtitle}}</h1> <br> {{ job.description }}",#}
+{#            });#}
             google.maps.event.addListener(marker, 'click', function() {
-                $.ajax({
-
-                    url: 'ajax/getData/{{ job.id }}',
-                    {#            data: {#}
-                    {#            'id': '{{ job.id }}'#}
-                    {#                 },#}
-                    dataType: 'json',
-                    success: function (data) {
-                        alert(JSON.stringify(data.job));
-
-                        $('#jobTitle').text('{{ job.Jobtitle }}');
-                        $('#jobDesp').text('{{ job.description }}');
-                        var coursesDiv=$('#courseDisplay');
-                        var t=JSON.stringify(data.filter_courses);
-
-
-                        {% for course in filter_courses %}
-                            $('#courseNumber_{{ course.0.id }}').text({{ course.0.number }}) ;
-
-                            '<div class="checkbox">'+
-                            '<label>'+
-                            ' <input type="checkbox" placeholder="Already enrolled" value="">'+'{{ course.0.number }}'+
-                            '</label>'+
-                            '<div class="col-md-11"> <span id="courseName">'+
-
-                            'Course Name: '+'{{ course.0.name }}'+'<br>'+
-                            'Course description:'+'{{ course.0.description }}'+'<br>'+
-                            'Department:   '+'{{ course.0.department }}'+'<br>'+
-                            'Program:'+'{{ course.0.program }}'+'<br>'+
-                            'Url:'+'{{ course.0.url }}'
-                        {% endfor %}
-
-
-
-
-
-
-                        $('#myModal').modal('show');
-
-                        {#                            alert('{{ job.Jobtitle }}')#}
-
-                    }
-                });
-
-
+$('#newPagePopUp').modal();
+                 $('#popBody').load('{% url 'course_recommendation:recommend' job.id  %}',function(){});
             });
-            google.maps.event.addListener(marker, 'mouseover', function() {
-                // this['infowindow'].open(map, this);
-            });
-            google.maps.event.addListener(marker, 'mouseout', function() {
-                // this['infowindow'].close(map, this);
-
-            });
-
-
-
-
-
         {% endfor %}
-
     }
-
-
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-
-
-
 </body>
 </html>

@@ -13,7 +13,7 @@ urlpatterns= [
     url(r'^$', views.index, name='index'),
     url(r'^job/$', views.job, name='job'),
     url(r'^job/(?P<job_id>[0-9]+)/$', views.recommend, name='recommend'),
-    url(r'^job/ajax/getData/(?P<job_id>[0-9]+)/$',views.test,name='test')
+    url(r'^job/(?P<job_id>[0-9]+)/(?P<prog>[a-z]+)$', views.recommend, name='recommend'),
 ]
 
 

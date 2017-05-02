@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from.models import jobs,courses
+from.models import jobs,courses,services
 from django.http import JsonResponse
 # from rest_framework import viewsets
 import re
@@ -40,14 +40,14 @@ def test(request,job_id):
     }
     return JsonResponse(data)
 
-def recommend(request,job_id):
+def recommend(request,job_id,prog=None):
     rec_courses = []
     recommend_courses=[]
     dict={}
     jobfull = get_object_or_404(jobs,pk=job_id)
     jobdesc = jobfull.description.lower()
-    job_list = re.split(', | | ,|,|-|\\. |\\.|: |:|; |;', jobdesc)
-    keywrods={'CMPE 226':['c', 'python'], 'CMPE 225':['java'], 'CMPE 207': ['tcp', 'ip', 'ssl']}
+    job_list = re.split("[^a-zA-Z0-9]", jobdesc)
+    keywrods={'CMPE 226':['mysql','php','xml'], 'CMPE 225':['java','python'], 'CMPE 207': ['tcp', 'ip', 'ssl'], 'CMPE 280':['html','css','css3','jquery']}
     a_list=keywrods.keys()
     for i in job_list:
         for course_num in a_list:
@@ -58,18 +58,20 @@ def recommend(request,job_id):
         count = rec_courses.count(k)
         dict[k] = count
 
-    for l in range(len(dict)):
-        if (dict.values()[l]) >= 2:
-            recommend_courses.append(courses.objects.filter(number=dict.keys()[l] ))
 
-    data={
-        'job':jobfull,
-        'filter_courses':recommend_courses,
-        'len':len(recommend_courses),
-    }
+    if prog is None:
+        for l in range(len(dict)):
+            # if (dict.values()[l]) >= 2:
+            recommend_courses.append(courses.objects.filter(number=dict.keys()[l]))
+    else:
+        for l in range(len(dict)):
+        # if (dict.values()[l]) >= 2:
+            recommend_courses.append(courses.objects.filter(number=dict.keys()[l],program=prog ))
 
-    return JsonResponse(data)
 
-    # return  render(request, 'uni_friend-frontend/jobpopup.html',{'jobs': jobfull ,'filter_courses': recommend_courses })
+
+    # return JsonResponse(data)
+
+    return render(request, 'uni_friend-frontend/modelPopUp.html',{'jobs': jobfull, 'filter_courses': recommend_courses})
 
 
