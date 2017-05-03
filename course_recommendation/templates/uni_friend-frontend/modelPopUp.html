@@ -47,6 +47,22 @@
                     <div class="col-md-1">&nbsp;</div>
                     <div class="col-md-11"> <span> {{ jobs.Jobtitle}}</span> </div>
                 </div>
+                 <div class="row">
+                    <div class="col-md-1" style="align:center; "> <i class="glyphicon glyphicon-globe"></i> </div>
+                    <div class="col-md-5">
+                        <label> Job Location: </label>
+                    </div>
+                     <div class="col-md-1" style="align:center; "> <i class="glyphicon glyphicon-qrcode"></i> </div>
+                    <div class="col-md-5">
+                        <label> Employer: </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">&nbsp;</div>
+                    <div class="col-md-5"> <span> {{ jobs.location}}</span> </div>
+                    <div class="col-md-1">&nbsp;</div>
+                    <div class="col-md-5"> <span> {{ jobs.company}}</span> </div>
+                </div>
                 <div class="row">
                     <div class="col-md-1" style="align:center; "> <i class="glyphicon glyphicon-paperclip"></i> </div>
                     <div class="col-md-11">
@@ -57,6 +73,14 @@
                     <div class="col-md-1">&nbsp;</div>
                     <div class="col-md-11"> <span>{{ jobs.description }} </span> </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-1" style="align:center; "> <i class="glyphicon glyphicon-link"></i> </div>
+                    <div class="col-md-11">
+                        <a href="{{ jobs.url }}" target="_blank"> Know More/Apply </a>
+                    </div>
+                </div>
+
+
             </div>
         </div>
         <div id="tab2" class="tab-pane fade">
@@ -80,7 +104,7 @@
                                     <b>Course Description: </b>{{ course.0.description }}<br>
                                     <b>Department: </b>{{ course.0.department }}<br>
                                     <b>Program: </b>{{ course.0.program }}<br>
-                                    <a href="{{ course.0.url }}">{{ course.0.number }} Course Link</a>  </span>
+                                    <a href="{{ course.0.url }}" target="_blank">{{ course.0.number }} Course Link</a>  </span>
                                 </div>
                             </div>
                         </div>

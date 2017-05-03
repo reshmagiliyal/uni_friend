@@ -29,7 +29,7 @@ class courses(models.Model):
 
 class services(models.Model):
     name=models.CharField(max_length=50)
-    url=models.URLField(max_length=20)
+    url=models.URLField(max_length=100)
     number=models.CharField(max_length=20)
 
 

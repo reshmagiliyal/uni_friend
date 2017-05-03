@@ -30,6 +30,12 @@ def job(request):
     all_j = jobs.objects.all()
     return render(request, 'uni_friend-frontend/courserec.html',{'all_jobs': all_j})
 
+def jobSelStates(request,state):
+    selStateJobs = jobs.objects.filter(location__contains=state)
+    # print selStateJobs
+    # return render(request, 'uni_friend-frontend/googleMapDiv.html', {'all_jobs': selStateJobs})
+    return render(request, 'uni_friend-frontend/courserec.html',{'all_jobs': selStateJobs})
+
 def recommend(request,job_id,prog=None):
     rec_courses = []
     recommend_courses=[]
@@ -64,5 +70,10 @@ def recommend(request,job_id,prog=None):
     return  render(request, 'uni_friend-frontend/modelPopUp.html',{'jobs': jobfull ,'filter_courses': recommend_courses })
 
 
-def services(request):
+def navServices(request):
     return render(request,'uni_friend-frontend/sjsunav.html')
+
+def servicesInfo(request):
+    all_services = services.objects.order_by('name')
+    # print(all_services)
+    return render(request, 'uni_friend-frontend/servinfo.html', {'services': all_services})
