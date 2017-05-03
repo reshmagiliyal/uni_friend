@@ -14,7 +14,7 @@ urlpatterns= [
     url(r'^job/$', views.job, name='job'),
     url(r'^job/(?P<state>[A-Z a-z]+)/sel$', views.jobSelStates, name='jobSelStates'),
     url(r'^job/(?P<job_id>[0-9]+)/$', views.recommend, name='recommend'),
-    url(r'^job/(?P<job_id>[0-9]+)/(?P<prog>[a-z]+)$', views.recommend, name='recommend'),
+    url(r'^job/(filter/)+$', views.filter, name='filter'),
     url(r'^sjsunav.html$',views.navServices,name='navService'),
     url(r'^servinfo.html$',views.servicesInfo,name='serviceInfo'),
 ]

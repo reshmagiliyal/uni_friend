@@ -36,7 +36,14 @@ def jobSelStates(request,state):
     # return render(request, 'uni_friend-frontend/googleMapDiv.html', {'all_jobs': selStateJobs})
     return render(request, 'uni_friend-frontend/courserec.html',{'all_jobs': selStateJobs})
 
-def recommend(request,job_id,prog=None):
+def filter(request,fil):
+    global prog
+    prog=request.POST.get("program")
+    all_j = jobs.objects.all()
+    return render(request, 'uni_friend-frontend/courserec.html', {'all_jobs': all_j,'prog':prog})
+
+def recommend(request,job_id):
+    global prog
     rec_courses = []
     recommend_courses=[]
     dict={}
@@ -62,7 +69,7 @@ def recommend(request,job_id,prog=None):
     else:
         for l in range(len(dict)):
             if (dict.values()[l]) >= 2:
-                recommend_courses.append(courses.objects.filter(number=dict.keys()[l],program=prog ))
+                recommend_courses.append(courses.objects.filter(number=dict.keys()[l] ).filter(program=prog))
 
 
     # return JsonResponse(data)

@@ -78,14 +78,25 @@
         </div>
     </div>
 </header>
+<form name= "form1" action="filter/{{ action }}" method='post' >
+{% csrf_token %}
+    <select   name="program" id="prog" size="5">
+        <option value="grad">grad</option>
+        <option value="undergrad">undergrad</option>
+    </select>
+      <input class="button" type=submit value="{{ button }}">
+</form>
+
 <section id="jobs" class="download bg-success text-center">
-    <div class="container" >
+    <div class="container">
         <div class="row">
             <div class="col-md-12" style="width:100%">
-                <h2 class="section-heading" id="selStates">Jobs in USA</h2>
-                <div id="googleMapDiv">
+             {% if prog is not None %}
+                <h3 class="section-heading" id="selStates">Jobs in USA  and course recommendations for {{ prog }} program </h3>
+            {% else %}
+             <h2 class="section-heading" id="selStates">Jobs in USA  </h2>
+               {% endif %}
                 <div class="map" id="map" style="height: 700px; width: 100%; background-color: #000000"></div>
-                    </div>
             </div>
         </div>
     </div>

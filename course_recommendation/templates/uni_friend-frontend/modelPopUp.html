@@ -91,6 +91,7 @@
                         <label> Courses List: </label>
                     </div>
                 </div>
+                {% if course in filter_courses  %}
                 {% for course in filter_courses %}
                     <div class="row">
                         <div class="col-md-1">&nbsp;</div>
@@ -104,12 +105,25 @@
                                     <b>Course Description: </b>{{ course.0.description }}<br>
                                     <b>Department: </b>{{ course.0.department }}<br>
                                     <b>Program: </b>{{ course.0.program }}<br>
-                                    <a href="{{ course.0.url }}" target="_blank">{{ course.0.number }} Course Link</a>  </span>
+                                    <a href="{{ course.0.url }}">{{ course.0.number }} Course Link</a>  </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 {% endfor %}
+            {% else %}
+                    <div class="row">
+                        <div class="col-md-1">&nbsp;</div>
+                        <div class="col-md-11">
+                     <div class="col-md-11"> <span>
+                sorry!! No related courses ..
+                </span>
+                     </div>
+                        </div>
+                    </div>
+
+            {% endif %}
+            </div>}
             </div>
             <aside> <span class="alert-info">Please check the checkbox if you have already enrolled to the course.</span> </aside>
             <form role="form" id="emailForm" style="display:none" >
